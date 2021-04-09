@@ -381,4 +381,4 @@
     assign num_of_words = num_of_words_reg[NUM_OF_WORDS_WIDTH-1:0];
 	// User logic ends
 
-	endmodule
+endmodule
