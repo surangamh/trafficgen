@@ -3,8 +3,8 @@
 	module trafficgen_v1_0 #
 	(
 		// Users to add parameters here
-        parameter integer NUM_OF_WORDS_WIDTH = 10,
-        // User parameters ends
+        	parameter integer NUM_OF_WORDS_WIDTH = 10,
+        	// User parameters ends
 		// Do not modify the parameters beyond this line
 
 		// Parameters of Axi Slave Bus Interface S00_AXI
@@ -48,16 +48,16 @@
 		output wire  m00_axis_tlast,
 		input wire  m00_axis_tready
 	);
-	    wire enable_w;
-        wire [NUM_OF_WORDS_WIDTH-1:0] num_of_words_w;
-// Instantiation of Axi Bus Interface S00_AXI
+	    	wire enable_w;
+        	wire [NUM_OF_WORDS_WIDTH-1:0] num_of_words_w;
+	// Instantiation of Axi Bus Interface S00_AXI
 	trafficgen_v1_0_S00_AXI # ( 
-	    .NUM_OF_WORDS_WIDTH(NUM_OF_WORDS_WIDTH),   
+	    	.NUM_OF_WORDS_WIDTH(NUM_OF_WORDS_WIDTH),   
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
 	) trafficgen_v1_0_S00_AXI_inst (
-	    .enable(enable_w),
-	    .num_of_words(num_of_words_w),
+	    	.enable(enable_w),
+	    	.num_of_words(num_of_words_w),
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
 		.S_AXI_AWADDR(s00_axi_awaddr),
@@ -83,12 +83,12 @@
 
 // Instantiation of Axi Bus Interface M00_AXIS
 	trafficgen_v1_0_M00_AXIS # (
-	    .NUM_OF_WORDS_WIDTH(NUM_OF_WORDS_WIDTH),
+	    	.NUM_OF_WORDS_WIDTH(NUM_OF_WORDS_WIDTH),
 		.C_M_AXIS_TDATA_WIDTH(C_M00_AXIS_TDATA_WIDTH),
 		.C_M_START_COUNT(C_M00_AXIS_START_COUNT)
 	) trafficgen_v1_0_M00_AXIS_inst (
-	    .enable(enable_w),
-	    .num_of_words(num_of_words_w), 
+	    	.enable(enable_w),
+	    	.num_of_words(num_of_words_w), 
 		.M_AXIS_ACLK(m00_axis_aclk),
 		.M_AXIS_ARESETN(m00_axis_aresetn),
 		.M_AXIS_TVALID(m00_axis_tvalid),
