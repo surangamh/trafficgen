@@ -103,7 +103,7 @@
 	//----------------------------------------------
 	//-- Signals for user logic register space example
 	//------------------------------------------------
-	//-- Number of Slave Registers 4
+	//-- Number of Slave Registers 2
 	reg [C_S_AXI_DATA_WIDTH-1:0] enable_reg;
 	reg [C_S_AXI_DATA_WIDTH-1:0] num_of_words_reg;
 
