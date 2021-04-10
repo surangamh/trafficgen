@@ -33,9 +33,7 @@
 		output wire  M_AXIS_TLAST,
 		// TREADY indicates that the slave can accept a transfer in the current cycle.
 		input wire  M_AXIS_TREADY
-	);
-	// Total number of output data                                                 
-	////localparam frame_size = 8;                                               
+	);                                            
 	                                                                                     
 	// function called clogb2 that returns an integer which has the                      
 	// value of the ceiling of the log base 2.                                           
@@ -48,10 +46,7 @@
 	                                                                                     
 	// WAIT_COUNT_BITS is the width of the wait counter.                                 
 	localparam integer WAIT_COUNT_BITS = clogb2(C_M_START_COUNT-1);                      
-	                                                                                     
-	// bit_num gives the minimum number of bits needed to address 'depth' size of FIFO.  
-	//localparam bit_num  = clogb2(frame_size);//clogb2(NUMBER_OF_OUTPUT_WORDS);                                
-	                                                                                     
+	                                                                                                                                                                                                        
 	// Define the states of state machine                                                
 	// The control state machine oversees the writing of input streaming data to the FIFO,
 	// and outputs the streaming data from the FIFO                                      
@@ -84,14 +79,12 @@
 	//The master has issued all the streaming data stored in FIFO
 	wire  	tx_done;
 
-
 	// I/O Connections assignments
 
 	assign M_AXIS_TVALID	= axis_tvalid_delay;
 	assign M_AXIS_TDATA	= stream_data_out;
 	assign M_AXIS_TLAST	= axis_tlast_delay;
 	assign M_AXIS_TSTRB	= {(C_M_AXIS_TDATA_WIDTH/8){1'b1}};
-
 
 	// Control state machine implementation                             
 	always @(posedge M_AXIS_ACLK)                                             
@@ -171,7 +164,6 @@
 	      axis_tlast_delay <= axis_tlast;                                                          
 	    end                                                                                        
 	end                                                                                            
-
 
 	//read_pointer pointer
 	assign tx_done = !enable;
