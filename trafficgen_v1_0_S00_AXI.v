@@ -3,7 +3,7 @@
 	module trafficgen_v1_0_S00_AXI #
 	(
 		// Users to add parameters here
-        parameter integer NUM_OF_WORDS_WIDTH      = 1,
+        	parameter integer NUM_OF_WORDS_WIDTH      = 1,
 		// User parameters ends
 		// Do not modify the parameters beyond this line
 
@@ -14,8 +14,8 @@
 	)
 	(
 		// Users to add ports here
-        output wire enable,
-        output wire [NUM_OF_WORDS_WIDTH-1:0] num_of_words,
+        	output wire enable,
+        	output wire [NUM_OF_WORDS_WIDTH-1:0] num_of_words,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
