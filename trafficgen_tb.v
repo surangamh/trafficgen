@@ -94,7 +94,7 @@ initial begin
         #60 s00_axi_awvalid = 1;
         s00_axi_wvalid = 1;
         s00_axi_bready = 1;
-        s00_axi_wdata = 1;
+        s00_axi_wdata = 1; // enable 
         s00_axi_awaddr = 0;
         #40 s00_axi_awvalid = 0;
         s00_axi_wvalid = 0;
@@ -103,7 +103,7 @@ initial begin
         #60 s00_axi_awvalid = 1;
         s00_axi_wvalid = 1;
         s00_axi_bready = 1;
-        s00_axi_wdata = 8;
+        s00_axi_wdata = 8; // number of words
         s00_axi_awaddr = 4;
         #40 s00_axi_awvalid = 0;
         s00_axi_wvalid = 0;
